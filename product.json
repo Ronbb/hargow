@@ -1,0 +1,12 @@
+{
+  "id": "hargow",
+  "name": "Hargow",
+  "tagline": "每日一啖，粤讲粤好",
+  "targetLanguage": "yue-Hant-HK",
+  "explanationLanguage": "zh-Hans",
+  "identity": "shared",
+  "learningDataScope": "product",
+  "frameworkRepository": "https://github.com/Ronbb/chef",
+  "curriculumRepository": "https://github.com/Ronbb/hargow-courses",
+  "status": "bootstrap"
+}
