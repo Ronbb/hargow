@@ -19,3 +19,5 @@ Hargow 发布 `hargow-teahouse-pilot`，首课 `starter-teahouse-arrive` revisio
 个人页产品文案与头像已移到薄产品配置；两产品Web817a0d6健康启动，API保持da5d821。H公网个人页实际显示粤语学习者/粤语入门，无固定法语文案；B保留原产品文案。类型检查、37SSR、两镜像构建通过。完整新CI终态另查。
 
 双产品最新生产快照及1504登记媒体已完整备份并verify；离线加密副本seal/verify通过，密钥只在本机私有目录。隔离数据库恢复后2账号、完整课源指纹、B generation10/H generation1发布指针及layout24与生产只读基线一致。媒体卷恢复仍在运行，不能据此宣称完整灾难恢复或异盘存放验收完成。
+
+译文开关关闭轨道对比修复：两产品Web98a0126已实际部署、API仍da5d821，容器healthy。隔离访客实际公网Chromium390px/Enter切换/3px焦点/无横向溢出通过。H/B关闭轨道对周围底色分别3.529/3.539，开启7.59，旋钮对轨道最低3.72；旧关闭仅1.68。只验证这项WCAG非文本控件对比，不宣称全部AA或真实iPhone验收。参考W3C https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html。
