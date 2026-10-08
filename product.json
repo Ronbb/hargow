@@ -8,10 +8,10 @@
   "learningDataScope": "product",
   "frameworkRepository": "https://github.com/Ronbb/chef",
   "curriculumRepository": "https://github.com/Ronbb/hargow-courses",
-  "status": "launch-shell",
+  "status": "production",
   "launch": {
     "heading": "每日一啖，\n粤讲粤好。",
-    "description": "由一笼虾饺、一句问候开始，把粤语带进日常。情境课程与粤语录音正在准备。",
+    "description": "由一笼虾饺、一句问候开始，把粤语带进日常。",
     "languageLabel": "粤语 · 日常情境学习"
   }
 }

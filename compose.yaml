@@ -1,0 +1,3 @@
+name: chef-hargow
+include:
+  - framework/infra/compose.product.yaml
