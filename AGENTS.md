@@ -14,3 +14,5 @@
 
 
 Web显示跟随固定配音声音快照/试听档案locale，框架5de3572已部署Web；服务da5d821保持。新Actions终态另查，不把本机浏览器/构建通过当远端全绿。
+
+Hargow CI已切换正式SSR Docker镜像构建/启动检查，不再以旧launch准备页作为正式入口证据。通用检查脚本位于Chef scripts/product-web-smoke.mjs，使用隔离匿名API、非root只读Web、新网络与随机localhost端口，校验产品文案/v2目录/匿名后台拒绝且无写入。两实际镜像本机检查通过；不替代真实DB/登录/完整教学与设备验收。生产Web98a0126/API da5d821保持，本次框架引用新增的仅运维检查脚本。

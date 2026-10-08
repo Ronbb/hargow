@@ -3,24 +3,20 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  launch:
+  image:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
         with:
           submodules: recursive
-      - run: docker build -f infra/Dockerfile.launch -t hargow-launch:test .
-      - run: docker run -d --name hargow-launch-test --read-only --cap-drop ALL -p 127.0.0.1:38000:3000 hargow-launch:test
-      - name: Verify isolated product entrance
-        run: |
-          curl --retry 20 --retry-all-errors --retry-delay 1 --fail http://127.0.0.1:38000/health
-          curl --fail http://127.0.0.1:38000/ | tee /tmp/hargow.html
-          grep -q 'Hargow' /tmp/hargow.html
-          grep -q '课程准备中' /tmp/hargow.html
-          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:38000/api/v1/me)" = 404
-      - if: always()
-        run: docker rm -f hargow-launch-test || true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.20.0
+          package-manager-cache: false
+      - run: docker build -f infra/Dockerfile.web -t hargow-web:test .
+      - name: Verify actual product SSR image
+        run: node framework/scripts/product-web-smoke.mjs hargow-web:test hargow
   web:
     runs-on: ubuntu-latest
     timeout-minutes: 15
