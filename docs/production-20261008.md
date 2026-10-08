@@ -17,3 +17,5 @@ Hargow 发布 `hargow-teahouse-pilot`，首课 `starter-teahouse-arrive` revisio
 后台配音语言显示补丁：两产品Web现为Chef5de3572，服务仍da5d821；只替换Web，八服务健康。37单元、37SSR、法语对齐精确回执恢复与粤语试听lang浏览器回归通过，产品类型检查和Docker构建通过。账号/课程/录音未写入，无真实供应商调用。旧私有配置备份于.local/private/speech-locale-rollout-20261008，最新CI需按提交读取终态。
 
 个人页产品文案与头像已移到薄产品配置；两产品Web817a0d6健康启动，API保持da5d821。H公网个人页实际显示粤语学习者/粤语入门，无固定法语文案；B保留原产品文案。类型检查、37SSR、两镜像构建通过。完整新CI终态另查。
+
+双产品最新生产快照及1504登记媒体已完整备份并verify；离线加密副本seal/verify通过，密钥只在本机私有目录。隔离数据库恢复后2账号、完整课源指纹、B generation10/H generation1发布指针及layout24与生产只读基线一致。媒体卷恢复仍在运行，不能据此宣称完整灾难恢复或异盘存放验收完成。
