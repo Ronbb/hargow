@@ -13,6 +13,8 @@ export default {
   themeColor: "#fafbf6",
   brandIcon: "/icons/brand.svg",
   avatar: "/assets/avatars/learner.svg",
+  learnerLabel: "粤语学习者",
+  courseLevelLabel: "粤语入门",
   theme: {
     "--paper": "#f6f8f1",
     "--surface": "#fffef9",
