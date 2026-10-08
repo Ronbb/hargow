@@ -29,3 +29,5 @@ Hargow 发布 `hargow-teahouse-pilot`，首课 `starter-teahouse-arrive` revisio
 产品固定Chef9d4921a：公共写请求按配置的协议与域名校验Origin，忽略端口；CSRF、登录、产品权限隔离保留。生产服务镜像切换及实际带端口请求验收另行记录。
 
 2026-10-09 两产品域名验证已生产更新为Chef981bf21，服务镜像chef-services:981bf21；Web保持98a0126。两套Compose只替换identity/learning，八服务healthy。恢复副本真实受限服务以配置无端口、请求Origin带8443完成共用账号登录/学习写入/续学；错误协议/域名/路径及缺CSRF拒绝。公网匿名请求确认8443与显式443通过来源校验，错误协议/域名及缺CSRF仍403；B两个域名与H域名均验证。生产账号/课源/发布/layout指纹前后相等，恢复测试服务清理、PG标签核对后停止。此改动不开放新的宿主HTTP端口，不调整外部网关。
+
+生产巡检工具已适配正式双产品部署，固定Chef c11ef28。可从产品库执行pnpm health:check并显式传layout product、product Compose项目及共享database-project；真实两产品四服务/共享PostgreSQL/四HTTP入口/本机磁盘检查通过。通用实现与35项运维回归（1项Docker可选回归本轮未运行）只在Chef；本次仅工具/文档，不替换服务981bf21或Web98a0126，也不把单次巡检视作持续容量验收。使用方式见Chef docs/operations.md。
