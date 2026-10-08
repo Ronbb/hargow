@@ -1,0 +1,25 @@
+name: hargow
+services:
+  launch:
+    build: {context: ., dockerfile: infra/Dockerfile.launch}
+    image: hargow-launch:local
+    networks: [gateway]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 0.25
+    mem_limit: 96m
+    pids_limit: 64
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://localhost:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    logging:
+      driver: local
+      options: {max-size: "5m", max-file: "2"}
+networks:
+  gateway:
+    external: true
+    name: brioche_app

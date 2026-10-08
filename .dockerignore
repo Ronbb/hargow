@@ -1,0 +1,8 @@
+*
+!product.json
+!brand.svg
+!infra/
+!infra/Dockerfile.launch
+!framework/
+!framework/scripts/
+!framework/scripts/serve-product-launch.mjs

@@ -1,0 +1,23 @@
+name: Hargow product
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - run: docker build -f infra/Dockerfile.launch -t hargow-launch:test .
+      - run: docker run -d --name hargow-launch-test --read-only --cap-drop ALL -p 127.0.0.1:38000:3000 hargow-launch:test
+      - name: Verify isolated product entrance
+        run: |
+          curl --retry 20 --retry-connrefused --retry-delay 1 --fail http://127.0.0.1:38000/health
+          curl --fail http://127.0.0.1:38000/ | tee /tmp/hargow.html
+          grep -q 'Hargow' /tmp/hargow.html
+          grep -q '课程准备中' /tmp/hargow.html
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:38000/api/v1/me)" = 404
+      - if: always()
+        run: docker rm -f hargow-launch-test || true
