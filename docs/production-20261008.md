@@ -21,3 +21,5 @@ Hargow 发布 `hargow-teahouse-pilot`，首课 `starter-teahouse-arrive` revisio
 双产品最新生产快照及1504登记媒体已完整备份并verify；离线加密副本seal/verify通过，密钥只在本机私有目录。隔离数据库恢复后2账号、完整课源指纹、B generation10/H generation1发布指针及layout24与生产只读基线一致。媒体卷恢复仍在运行，不能据此宣称完整灾难恢复或异盘存放验收完成。
 
 译文开关关闭轨道对比修复：两产品Web98a0126已实际部署、API仍da5d821，容器healthy。隔离访客实际公网Chromium390px/Enter切换/3px焦点/无横向溢出通过。H/B关闭轨道对周围底色分别3.529/3.539，开启7.59，旋钮对轨道最低3.72；旧关闭仅1.68。只验证这项WCAG非文本控件对比，不宣称全部AA或真实iPhone验收。参考W3C https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html。
+
+双产品媒体恢复已获真实退出码0，1504对象逐个写入并哈希校验通过，数据库账号/完整课源/发布指针/layout指纹在媒体完成后再次相等。隔离PG按disposable标签核对后停止；新DB/卷保留。恢复工具不恢复数据库所有者/ACL，正式切换仍需专用角色授权、私有配置及登录/学习服务验收；本次不称完整灾难恢复完成，也未修改生产。
