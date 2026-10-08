@@ -21,3 +21,19 @@ jobs:
           test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:38000/api/v1/me)" = 404
       - if: always()
         run: docker rm -f hargow-launch-test || true
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24.20.0
+          package-manager-cache: false
+      - run: npm install -g pnpm@11.11.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm build
+      - run: pnpm test:web

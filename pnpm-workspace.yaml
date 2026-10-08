@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - framework/packages/*
+injectWorkspacePackages: true
+allowBuilds:
+  agent-browser@0.27.0: true
+  "@tailwindcss/oxide": true
+  esbuild: true

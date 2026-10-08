@@ -1,0 +1,21 @@
+FROM node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e AS build
+WORKDIR /app
+RUN npm install -g pnpm@11.11.0
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY apps/web/package.json apps/web/package.json
+COPY framework/packages/contracts/package.json framework/packages/contracts/package.json
+COPY framework/packages/web/package.json framework/packages/web/package.json
+RUN --mount=type=cache,id=hargow-web-pnpm,target=/pnpm/store pnpm --filter @hargow/web... install --frozen-lockfile --store-dir=/pnpm/store --fetch-timeout=600000
+COPY framework/packages/contracts framework/packages/contracts
+COPY framework/packages/web framework/packages/web
+COPY apps/web apps/web
+RUN pnpm build
+RUN pnpm --filter @hargow/web deploy --prod /out
+
+FROM node:24.20.0-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e
+WORKDIR /app
+COPY --from=build --chown=node:node /out /app
+USER node
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
+EXPOSE 3000
+CMD ["node","node_modules/@react-router/serve/bin.cjs","build/server/index.js"]

@@ -1,0 +1,33 @@
+import type { Product } from "@chef/web/product";
+export default {
+  id: "hargow",
+  sessionNamespace: "hargow",
+  name: "Hargow",
+  wordmark: "hargow.",
+  tagline: "每日一啖，粤讲粤好",
+  greeting: "早晨，今日由一啖开始。",
+  heroLines: ["每日一啖，", "粤讲粤好。"],
+  defaultUnit: "日常粤语",
+  targetLanguage: "yue-Hant-HK",
+  explanationLanguage: "zh-CN",
+  themeColor: "#fafbf6",
+  brandIcon: "/icons/brand.svg",
+  avatar: "/assets/avatars/learner.svg",
+  theme: {
+    "--paper": "#f6f8f1",
+    "--surface": "#fffef9",
+    "--ink": "#38291f",
+    "--muted": "#695842",
+    "--primary": "#b8cfa5",
+    "--accent": "#4b6b45",
+    "--soft": "#eef3e6",
+    "--leaf": "#acd793",
+    "--green": "#3b572b",
+    "--line": "#dbe4d2",
+    "--butter": "#edcd9e",
+    "--pistachio": "#3b572b",
+    "--sans":
+      '-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif',
+    "--serif": 'ui-serif, "New York", Georgia, "Times New Roman", serif',
+  },
+} satisfies Product;

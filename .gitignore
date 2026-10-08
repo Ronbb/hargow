@@ -7,3 +7,5 @@ target/
 build/
 *.key
 *.pem
+**/.react-router/
+apps/web/framework/
