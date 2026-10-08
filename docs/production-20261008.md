@@ -23,3 +23,7 @@ Hargow 发布 `hargow-teahouse-pilot`，首课 `starter-teahouse-arrive` revisio
 译文开关关闭轨道对比修复：两产品Web98a0126已实际部署、API仍da5d821，容器healthy。隔离访客实际公网Chromium390px/Enter切换/3px焦点/无横向溢出通过。H/B关闭轨道对周围底色分别3.529/3.539，开启7.59，旋钮对轨道最低3.72；旧关闭仅1.68。只验证这项WCAG非文本控件对比，不宣称全部AA或真实iPhone验收。参考W3C https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html。
 
 双产品媒体恢复已获真实退出码0，1504对象逐个写入并哈希校验通过，数据库账号/完整课源/发布指针/layout指纹在媒体完成后再次相等。隔离PG按disposable标签核对后停止；新DB/卷保留。恢复工具不恢复数据库所有者/ACL，正式切换仍需专用角色授权、私有配置及登录/学习服务验收；本次不称完整灾难恢复完成，也未修改生产。
+
+恢复副本已用三类受限数据库角色启动实际身份/学习服务，合成账号能登录两产品，启动重放、步骤保存/续学与跨产品会话拒绝通过；B示例课9份音频/3份图片、H6份音频/2份头像逐项HTTP哈希与音频Range验证通过。原账号及课源指纹保持，合成身份仅在恢复副本。无ACL恢复须先执行Chef restore-boundaries.sql，再授予专用运行角色权限；模板及真实Docker回归由Chef维护。
+
+产品固定Chef9d4921a：公共写请求按配置的协议与域名校验Origin，忽略端口；CSRF、登录、产品权限隔离保留。生产服务镜像切换及实际带端口请求验收另行记录。
