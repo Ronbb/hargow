@@ -4,16 +4,21 @@
   "packageManager": "pnpm@11.11.0",
   "scripts": {
     "dev:web": "pnpm --filter @hargow/web dev",
-    "health:check": "node framework/scripts/health-check.mjs",
+    "health:check": "tsx framework/scripts/health-check.ts",
     "build": "pnpm --filter @hargow/web build",
-    "typecheck": "pnpm --filter @hargow/web typecheck",
-    "test:web": "node framework/scripts/web-tests.mjs unit",
-    "test:ssr": "node framework/scripts/web-tests.mjs ssr",
-    "test:browser": "node framework/scripts/web-tests.mjs browser",
-    "test:browser:ssr": "node framework/scripts/web-tests.mjs browser-ssr"
+    "typecheck": "pnpm typecheck:scripts && pnpm --filter @hargow/web typecheck",
+    "test:web": "tsx framework/scripts/web-tests.ts unit",
+    "test:ssr": "tsx framework/scripts/web-tests.ts ssr",
+    "test:browser": "tsx framework/scripts/web-tests.ts browser",
+    "test:browser:ssr": "tsx framework/scripts/web-tests.ts browser-ssr",
+    "typecheck:scripts": "tsc -p framework/scripts/tsconfig.json"
   },
   "devDependencies": {
     "agent-browser": "0.27.0",
-    "prettier": "3.9.9"
-  }
+    "prettier": "3.9.9",
+    "tsx": "4.23.15",
+    "@types/node": "24.10.13",
+    "typescript": "7.0.2"
+  },
+  "type": "module"
 }
